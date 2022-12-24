@@ -12,7 +12,6 @@ Calculate your writing statistics on your WordPress site instantly.
 ## Description ##
 
 **Just Writing Statistics is a fork of WP Word Count**
-**Just Writing Statistics is a fork of WP Word Count**
 
 Just Writing Statistics tells you exactly how many words you've written on your site with statistics by month and author.
 
