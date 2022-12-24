@@ -3,8 +3,7 @@ name: NodeJS with Grunt
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    paths: [ "readme.txt" ]
 
 jobs:
   build:
