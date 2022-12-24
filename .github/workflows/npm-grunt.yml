@@ -25,4 +25,5 @@ jobs:
     - name: Build
       run: |
         npm i
+        npm install -g grunt
         grunt
