@@ -26,3 +26,7 @@ jobs:
       run: |
         npm install
         grunt
+        git config --global user.name 'Greg Ross'
+        git config --global user.email 'greg@toolstack.com'
+        git commit -am "Update readme.md"
+        git push
