@@ -1,5 +1,5 @@
 === Just Writing Statistics ===
-Contributors: gregross, redlettuce
+Contributors: gregross
 Tags: word count, reading time, authors, words, writing
 Requires at least: 4.6
 Tested up to: 6.1.1
