@@ -1,0 +1,16 @@
+name: Update a WordPress readme.txt's "Test up to" value to the lastest release of WordPress.
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "readme.txt" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build
+      run: {$PWD}/.github/workflows/update-wp-tested-up-to.sh
