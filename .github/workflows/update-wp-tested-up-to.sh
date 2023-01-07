@@ -17,7 +17,18 @@ if [ -z "$WP_VERSION" ]; then
 else
 	echo "Current WordPress version is: $WP_VERSION"
 
+	echo "Updating readme.txt..."
 	sed -i "s/^Tested up to: .*/Tested up to: $WP_VERSION/" ${GITHUB_WORKSPACE}/readme.txt
 
-	cat ${GITHUB_WORKSPACE}/readme.txt
+	head -n 10 ${GITHUB_WORKSPACE}/readme.txt
+
+	echo "Commiting changes to GIT..."
+    git config --global user.name '${{secrets.GIT_USERNAME}}'
+    git config --global user.email '${{secrets.GIT_EMAIL}}'
+    git commit -am "Update Tested up to value in readme.txt"
+    git push
+
+    echo "Updating tag..."
+    git tag -f 1.0
+    git push --force origin 1.0
 fi
