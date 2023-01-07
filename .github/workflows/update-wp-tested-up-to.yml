@@ -1,4 +1,4 @@
-name: Update a WordPress readme.txt's "Test up to" value to the lastest release of WordPress.
+name: Update a WordPress readme.txt's Test up to value to the lastest release of WordPress.
 
 on:
   push:
