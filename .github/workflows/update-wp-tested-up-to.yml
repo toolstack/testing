@@ -13,4 +13,4 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Build
-      run: {$PWD}/.github/workflows/update-wp-tested-up-to.sh
+      run: bash {$PWD}/.github/workflows/update-wp-tested-up-to.sh
