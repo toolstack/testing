@@ -18,15 +18,12 @@ git config --global user.email '$GIT_EMAIL'
 
 echo "Getting the latest tag name..."
 # This will get us the latest tag in the repo.
-git for-each-ref refs/tags --sort=-taggerdate --format='%(refname)' --count=1 > tag.txt
+git describe --tags $(git rev-list --tags --max-count=1) > tag.txt
 
 cat tag.txt
 
-VERSION="${GITHUB_REF#refs/tags/}"
-echo $VERSION
-
 # Strip out the preceeding "refs/tags/" text from it.
-sed -i 's/refs\/tags\///' tag.txt
+#sed -i 's/refs\/tags\///' tag.txt
 
 # Store it in a variable and delete the temp file.
 TAG=$(<tag.txt)
