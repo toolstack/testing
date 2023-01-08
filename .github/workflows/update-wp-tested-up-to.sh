@@ -18,7 +18,7 @@ git config --global user.email '$GIT_EMAIL'
 
 echo "Getting the latest tag name..."
 # This will get us the latest tag in the repo.
-git describe --tags $(git rev-list --tags --max-count=1) > tag.txt
+git tag > tag.txt
 
 cat tag.txt
 
