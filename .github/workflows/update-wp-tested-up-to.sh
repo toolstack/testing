@@ -37,7 +37,7 @@ README_VERSION=`grep "^Tested up to: $WP_VERSION" ${GITHUB_WORKSPACE}/readme.txt
 
 if [ ! -z "$WP_VERSION" ]; then
 	echo "Readme.txt is up to date... nothing to do."
-	exit 0
+#	exit 0
 fi
 
 echo "Updating readme.txt..."
