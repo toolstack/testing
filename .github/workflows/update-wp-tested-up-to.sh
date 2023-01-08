@@ -22,6 +22,9 @@ git for-each-ref refs/tags --sort=-taggerdate --format='%(refname)' --count=1 > 
 
 cat tag.txt
 
+VERSION="${GITHUB_REF#refs/tags/}"
+echo $VERSION
+
 # Strip out the preceeding "refs/tags/" text from it.
 sed -i 's/refs\/tags\///' tag.txt
 
