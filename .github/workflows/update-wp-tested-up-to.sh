@@ -60,4 +60,4 @@ VERSION="${VERSION#v}"
 
 echo "VERSION: $VERSION"
 
-php --version
+set
