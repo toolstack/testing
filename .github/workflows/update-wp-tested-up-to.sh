@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set
+exit 0
+
 echo "Checking requirements..."
 
 if [ -z "$GIT_USERNAME" ]; then
