@@ -12,6 +12,10 @@ if [ -z "${{secrets.GIT_EMAIL}}" ]; then
 	exit 1
 fi
 
+echo "Configuring GIT..."
+git config --global user.name '${{secrets.GIT_USERNAME}}'
+git config --global user.email '${{secrets.GIT_EMAIL}}'
+
 echo "Getting the latest tag name..."
 # This will get us the latest tag in the repo.
 git for-each-ref refs/tags --sort=-taggerdate --format='%(refname)' --count=1 > tag.txt
@@ -45,7 +49,7 @@ sed -i 's/["\t\s]//g' stable.txt
 # Now cut down any 3 part versions, like 6.1.1, to two parts, aka 6.1.
 sed -i 's/\([0-9]*\)\.\([0-9]*\)\.[0-9]*/\1.\2/' stable.txt
 
-# Store it in a variable and delete the temp file.
+# Store it in a variable and delete the temp files.
 WP_VERSION=$(<stable.txt)
 rm stable*.txt
 
@@ -77,8 +81,6 @@ sed -i "s/^Stable tag: .*/Stable tag: $TAG/" ${GITHUB_WORKSPACE}/readme.txt
 head -n 10 ${GITHUB_WORKSPACE}/readme.txt
 
 echo "Commiting changes to GIT..."
-git config --global user.name '${{secrets.GIT_USERNAME}}'
-git config --global user.email '${{secrets.GIT_EMAIL}}'
 git commit -am "Update Tested up to value in readme.txt"
 git push
 
