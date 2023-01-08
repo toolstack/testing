@@ -1,8 +1,5 @@
 #!/bin/bash
 
-set
-exit 0
-
 echo "Checking requirements..."
 
 if [ -z "$GIT_USERNAME" ]; then
@@ -16,8 +13,8 @@ if [ -z "$GIT_EMAIL" ]; then
 fi
 
 echo "Configuring GIT..."
-git config --global user.name '$GIT_USERNAME'
-git config --global user.email '$GIT_EMAIL'
+git config --global user.name "$GIT_USERNAME"
+git config --global user.email "$GIT_EMAIL"
 
 echo "Getting the latest tag name..."
 # This will get us the latest tag in the repo.
@@ -25,7 +22,7 @@ git tag > tag.txt
 
 cat tag.txt
 
-# Strip out the preceeding "refs/tags/" text from it.
+# Strip out the preceding "refs/tags/" text from it.
 #sed -i 's/refs\/tags\///' tag.txt
 
 # Store it in a variable and delete the temp file.
