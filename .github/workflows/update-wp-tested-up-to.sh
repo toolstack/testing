@@ -19,6 +19,9 @@ git config --global user.email '${{secrets.GIT_EMAIL}}'
 echo "Getting the latest tag name..."
 # This will get us the latest tag in the repo.
 git for-each-ref refs/tags --sort=-taggerdate --format='%(refname)' --count=1 > tag.txt
+
+cat tag.txt
+
 # Strip out the preceeding "refs/tags/" text from it.
 sed -i 's/refs\/tags\///' tag.txt
 
