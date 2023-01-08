@@ -2,19 +2,19 @@
 
 echo "Checking requirements..."
 
-if [ -z "${{secrets.GIT_USERNAME}}" ]; then
+if [ -z "$GIT_USERNAME" ]; then
 	echo "ERROR: GIT user name secret not found, please set the GIT_USERNAME secret for this repo."
 	exit 1
 fi
 
-if [ -z "${{secrets.GIT_EMAIL}}" ]; then
+if [ -z "$GIT_EMAIL" ]; then
 	echo "ERROR: GIT e-mail secret not found, please set the GIT_EMAIL secret for this repo."
 	exit 1
 fi
 
 echo "Configuring GIT..."
-git config --global user.name '${{secrets.GIT_USERNAME}}'
-git config --global user.email '${{secrets.GIT_EMAIL}}'
+git config --global user.name '$GIT_USERNAME'
+git config --global user.email '$GIT_EMAIL'
 
 echo "Getting the latest tag name..."
 # This will get us the latest tag in the repo.

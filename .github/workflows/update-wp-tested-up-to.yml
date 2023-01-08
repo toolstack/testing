@@ -14,3 +14,6 @@ jobs:
 
     - name: Build
       run: bash ${GITHUB_WORKSPACE}/.github/workflows/update-wp-tested-up-to.sh
+      env:
+        GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
+        GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
