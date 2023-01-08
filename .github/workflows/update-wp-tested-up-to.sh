@@ -70,7 +70,7 @@ README_TAG=`grep "^Stable tag: $TAG" ${GITHUB_WORKSPACE}/readme.txt`
 # Grep will return any matching string, so if we add both of the above together and
 # check to see if we have an empty string, that will tell us if we have updates to do
 # or not.
-if [ ! -z "$README_VERSION$README_TAG" ]; then
+if [ ! -z "$README_VERSION" && ! -z "$README_TAG" ]; then
 	echo "Readme.txt is up to date... nothing to do."
 	exit 0
 fi
